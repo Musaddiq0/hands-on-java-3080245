@@ -1,4 +1,5 @@
 package bank;
+
 import java.util.Objects;
 
 public class Customer {
@@ -7,14 +8,15 @@ public class Customer {
   private String username;
   private String password;
   private int accountID;
- 
-  public Customer(int id ,String username, String password, int accountID){
+
+  public Customer(int id, String username, String password, int accountID) {
     setId(accountID);
     setName(username);
     setPassword(password);
     setAccountID(accountID);
 
   }
+
   public int getId() {
     return this.id;
   }
@@ -55,5 +57,4 @@ public class Customer {
     this.accountID = accountID;
   }
 
-  
 }
