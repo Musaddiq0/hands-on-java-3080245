@@ -71,7 +71,12 @@ private void showMenu( Customer customer, Accounts accounts){
       case 2: 
       System.out.println("How much would you like to withdraw");
       amount = scanner.nextDouble();
-      accounts.withdraw(amount);
+      try {
+        accounts.withdraw(amount);
+      } catch (Exception e) {
+        System.out.println( e.getMessage());
+        System.out.println("invalid amount please try again");
+      }
         break;
       case 3 : 
       System.out.println("Current balance " + accounts.getBalance());
