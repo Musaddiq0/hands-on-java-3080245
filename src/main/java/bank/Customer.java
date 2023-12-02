@@ -7,9 +7,10 @@ public class Customer {
   private String password;
   private int accountID;
 
-  public Customer(int id, String username, String password, int accountID) {
+  public Customer(int id,String name, String username, String password, int accountID) {
     setId(accountID);
-    setName(username);
+    setName(name);
+    setUsername(username);
     setPassword(password);
     setAccountID(accountID);
 
