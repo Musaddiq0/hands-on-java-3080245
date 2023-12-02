@@ -6,13 +6,15 @@ public class Customer {
   private String username;
   private String password;
   private int accountID;
+  private boolean authenticator;
 
-  public Customer(int id,String name, String username, String password, int accountID) {
+  public Customer(int id, String name, String username, String password, int accountID) {
     setId(accountID);
     setName(name);
     setUsername(username);
     setPassword(password);
     setAccountID(accountID);
+    setAuthenticator(false);
 
   }
 
@@ -54,6 +56,14 @@ public class Customer {
 
   public void setAccountID(int accountID) {
     this.accountID = accountID;
+  }
+
+  public boolean isAuthenticator() {
+    return this.authenticator;
+  }
+
+  public void setAuthenticator(boolean authenticator) {
+    this.authenticator = authenticator;
   }
 
 }
