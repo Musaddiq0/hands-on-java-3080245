@@ -42,10 +42,35 @@ public class DataSource {
     }
     return customer;
   }
+
+  public static Accounts getAccount(int accountID){
+    String sql = "select * from accounts where id = ?";
+    Accounts accounts = null;
+    try (Connection connection = connect();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+          preparedStatement.setInt(1, accountID);
+          try(ResultSet resultSet = preparedStatement.executeQuery()){
+            accounts = new Accounts(
+             resultSet.getInt("id"),
+             resultSet.getString("type"),
+             resultSet.getInt("balance"));
+          }
+
+        
+      
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return accounts;
+
+  }
   public static void main(String[] args) {
     // connect();
     Customer customer = getCustomer("twest8o@friendfeed.com");
     System.out.println(customer.getName());
+    Accounts accounts = getAccount(customer.getAccountID());
+    System.out.println(accounts.getBalance());
   }
 
 }
