@@ -1,7 +1,5 @@
 package bank;
 
-import java.util.Objects;
-
 public class Customer {
   private int id;
   private String name;
